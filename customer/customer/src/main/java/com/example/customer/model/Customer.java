@@ -6,6 +6,11 @@ public class Customer {
     @Id
     private int id;
     private String name;
+    private String correo;
+    private String usuario;
+    private String phone;
+    private String direccion;
+
 
     public int getId() {
         return id;
@@ -22,4 +27,5 @@ public class Customer {
     public void setName(String name) {
         this.name = name;
     }
+
 }
