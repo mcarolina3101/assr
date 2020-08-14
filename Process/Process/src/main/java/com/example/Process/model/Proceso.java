@@ -1,18 +1,13 @@
-package com.example.customer.model;
+package com.example.Process.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "Customer")
-public class Customer {
+@Document(collection = "Process")
+public class Proceso {
     @Id
     private int id;
     private String name;
-    private String correo;
-    private String usuario;
-    private String phone;
-    private String direccion;
-
 
     public int getId() {
         return id;
@@ -29,5 +24,4 @@ public class Customer {
     public void setName(String name) {
         this.name = name;
     }
-
 }
