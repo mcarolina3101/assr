@@ -1,29 +1,20 @@
-package com.example.seller.model;
+package com.example.Process.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import java.util.List;
 
-@Document(collection = "Seller") //necesario si se quiere entrar a mas campos de la base de datos, si no quitar @id, y todos los atributos, menos id
-public class Seller {
+
+public class Customer {
     @Id
-    private int id;
-    private String mail;
     private String user;
+    private String mail;
     private String passwd;
     private String phone;
     private String direccion;
-    private List<Product> productList;
+    private String tarjeta;
+    private int numeroTarjeta;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getMail() {
+     public String getMail() {
         return mail;
     }
 
@@ -63,20 +54,19 @@ public class Seller {
         this.direccion = direccion;
     }
 
-    public List<Product> getProductList() {
-        return productList;
+    public String getTarjeta() {
+        return tarjeta;
     }
 
-    public void setProductList(List<Product> productList) {
-        this.productList = productList;
+    public void setTarjeta(String tarjeta) {
+        this.tarjeta = tarjeta;
     }
 
-    @Override
-    public String toString() {
-        return "Vendedor:" + '\'' +
-                ", usuario='" + user + '\'' +
-                ", teléfono='" + phone + '\'' +
-                ", dirección='" + direccion;
+    public int getNumeroTarjeta() {
+        return numeroTarjeta;
     }
 
+    public void setNumeroTarjeta(int numeroTarjeta) {
+        this.numeroTarjeta = numeroTarjeta;
+    }
 }

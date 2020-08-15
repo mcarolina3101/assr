@@ -6,28 +6,76 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Customer")
 public class Customer {
     @Id
-    private int id;
-    private String name;
-    private String correo;
-    private String usuario;
+    private String user;
+    private String mail;
+    private String passwd;
     private String phone;
     private String direccion;
+    private String tarjeta;
+    private int numeroTarjeta;
 
-
-    public int getId() {
-        return id;
+    public String getMail() {
+        return mail;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 
-    public String getName() {
-        return name;
+    public String getUser() {
+        return user;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public String getPasswd() {
+        return passwd;
+    }
+
+    public void setPasswd(String passwd) {
+        this.passwd = passwd;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getTarjeta() {
+        return tarjeta;
+    }
+
+    public void setTarjeta(String tarjeta) {
+        this.tarjeta = tarjeta;
+    }
+
+    public int getNumeroTarjeta() {
+        return numeroTarjeta;
+    }
+
+    public void setNumeroTarjeta(int numeroTarjeta) {
+        this.numeroTarjeta = numeroTarjeta;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente:" +'\'' +
+                ", usuario='" + user + '\'' +
+                ", teléfono='" + phone + '\'' +
+                ", dirección='" + direccion;
     }
 
 }

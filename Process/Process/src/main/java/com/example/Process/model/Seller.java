@@ -1,7 +1,8 @@
-package com.example.seller.model;
+package com.example.Process.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.List;
 
 @Document(collection = "Seller") //necesario si se quiere entrar a mas campos de la base de datos, si no quitar @id, y todos los atributos, menos id
@@ -31,9 +32,7 @@ public class Seller {
         this.mail = mail;
     }
 
-    public String getUser() {
-        return user;
-    }
+    public String getUser() { return user; }
 
     public void setUser(String user) {
         this.user = user;
@@ -71,12 +70,7 @@ public class Seller {
         this.productList = productList;
     }
 
-    @Override
-    public String toString() {
-        return "Vendedor:" + '\'' +
-                ", usuario='" + user + '\'' +
-                ", teléfono='" + phone + '\'' +
-                ", dirección='" + direccion;
-    }
 
 }
+
+
