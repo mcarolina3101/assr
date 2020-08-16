@@ -16,7 +16,7 @@ public class RegisterController {
     @PostMapping("/addRegister")
     public String saveProcess(@RequestBody Register register) {
         repository.save(register);
-        return "Added register with id : " + register.getId();
+        return "Added register with id : " ;
     }
 
     @GetMapping("/findAllRegister")
