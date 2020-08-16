@@ -7,9 +7,9 @@ import java.util.Date;
 
 @Document(collection = "Process")
 public class Proceso {
-    @Id
-    private int id;
-    private Date date;
+    //@Id
+    //private int id;
+    private String date;
     private String direccion;
     private String phoneCustomer;
     private String phoneSeller;
@@ -18,21 +18,19 @@ public class Proceso {
     private String  customer;
     private String seller;
 
-    public int getId() {
+    /*public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
-    }
+    }*/
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
+    public void setDate(String date) {this.date = date;}
 
     public String getDireccion() {
         return direccion;
@@ -90,8 +88,7 @@ public class Proceso {
         this.price = price;
     }
 
-    public Proceso(int id, Date date, String direccion, String phoneCustomer, String phoneSeller, String product, double price, String customer, String seller) {
-        this.id = id;
+    public Proceso(String date, String direccion, String phoneCustomer, String phoneSeller, String product, double price, String customer, String seller) {
         this.date = date;
         this.direccion = direccion;
         this.phoneCustomer = phoneCustomer;

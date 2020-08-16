@@ -10,15 +10,16 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 @SpringBootApplication
-@EnableEurekaClient
 @EnableZuulProxy
+@EnableEurekaClient
+
 
 public class GatewayApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GatewayApplication.class, args);
 	}
-
+/*
 	@Bean
 	public CorsFilter corsFilter() {
 		final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
@@ -36,5 +37,5 @@ public class GatewayApplication {
 		source.registerCorsConfiguration("/**", config);
 		return new CorsFilter(source);
 	}
-
+*/
 }

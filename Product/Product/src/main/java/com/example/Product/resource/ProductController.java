@@ -1,16 +1,15 @@
-package com.example.Products.resource;
+package com.example.Product.resource;
 
-import com.example.Products.model.Product;
-import com.example.Products.repository.ProductRepository;
+import com.example.Product.model.Product;
+import com.example.Product.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
+@RestController
 public class ProductController {
-    @RestController
-    public class SellerController {
         @Autowired
         private ProductRepository repository;
 
@@ -20,15 +19,15 @@ public class ProductController {
             return "Added product with id : " + product.getId();
         }
 
-        @GetMapping("/findAllProduct")
+        @GetMapping("/findAllProducts")
         public List<Product> getProduct() {
             return repository.findAll();
         }
 
         @GetMapping("/findAllProduct/{id}")
-        public Optional<Product> getProduct(@PathVariable int id) {
-            return repository.findById(id);
-        }
+        public Optional<Product> getProduct(@PathVariable int id) { return repository.findById(id); }
 
+        @GetMapping("/find/{name}")
+        public List<Product> getProducts(@PathVariable String name) { return repository.findbyName(name); }
 
 }

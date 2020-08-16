@@ -7,7 +7,6 @@ import java.util.Date;
 
 @Document(collection = "Register")
 public class Register {
-    @Id
     private Seller seller;
     private Date date;
     private Customer customer;

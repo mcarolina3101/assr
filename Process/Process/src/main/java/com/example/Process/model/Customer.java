@@ -3,7 +3,7 @@ package com.example.Process.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-
+@Document(collection = "Customer")
 public class Customer {
     @Id
     private String user;
@@ -26,9 +26,7 @@ public class Customer {
         return user;
     }
 
-    public void setUser(String user) {
-        this.user = user;
-    }
+    public void setUser(String user) {this.user = user; }
 
     public String getPasswd() {
         return passwd;
@@ -69,4 +67,6 @@ public class Customer {
     public void setNumeroTarjeta(int numeroTarjeta) {
         this.numeroTarjeta = numeroTarjeta;
     }
+
+
 }

@@ -19,33 +19,38 @@ import java.util.Optional;
 public class ProcessController {
     @Autowired
     private ProcessRepository repository;
+
+    @Autowired
     private CustomerRepository customerRepository;
+
+    @Autowired
     private ProductRepository productRepository;
+
+    @Autowired
     private SellerRepository sellerRepository;
 
-    @PostMapping("/addProcess/customer/{customer}/product/{id}/seller/{seller}/Date{date}")
-    public String saveProcess(@PathVariable int id,@PathVariable String customer, @PathVariable String seller,@PathVariable Date date){
+    @PostMapping("/addProcess/customer/{customer}/product/{id}/seller/{seller}")
+    public String saveProcess(@PathVariable int id,@PathVariable String customer, @PathVariable String seller){
+        Product productUser   = productRepository.findById(id).get();
         Customer customerUser = customerRepository.findByUser(customer);
-        Seller sellerUser = sellerRepository.findByUser(seller);
-        Optional<Product> productUser = productRepository.findById(id);
+        Seller sellerUser     = sellerRepository.findByUser(seller);
+        Date date = new Date();
+        date.getTime();
         Proceso process=new Proceso(
-                1,
-                date,
+                date.toString(),
                 customerUser.getDireccion(),
                 customerUser.getPhone(),
                 sellerUser.getPhone(),
-                productUser<1>.getName(),
-                productUser<1>.getPrice(),
-                customerUser.getUser(),
-                sellerUser.getUser());
-
+                productUser.getName(),
+                productUser.getPrice(),
+                customer,
+                seller);
         repository.save(process);
-        return "Added process with id : " + process.getId();
+        return "Added process";
     }
 
     @GetMapping("/customer/{customer}/product/{id}/seller/{seller}")
-    public Optional<Proceso> getProcess(@PathVariable int id) {
-        return repository.findById(id);
-    }
+    public Optional<Proceso> getProcess(@PathVariable int id) {return repository.findById(id); }
+
 
 }

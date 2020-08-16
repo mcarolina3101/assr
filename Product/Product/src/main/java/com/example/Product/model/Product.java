@@ -1,4 +1,4 @@
-package com.example.seller.model;
+package com.example.Product.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -12,9 +12,7 @@ public class Product {
     private String description;
     private int stock;
 
-    public int getId() {
-        return id;
-    }
+    public int getId() { return id; }
 
     public void setId(int id) {
         this.id = id;
@@ -51,4 +49,14 @@ public class Product {
     public void setStock(int stock) {
         this.stock = stock;
     }
+
+    @Override
+    public String toString() {
+        return "Producto: " +'\'' +
+                "id=" + id +'\'' +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", descripcion='" + description;
+    }
+
 }

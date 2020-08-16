@@ -30,9 +30,7 @@ public class Customer {
         this.user = user;
     }
 
-    public String getPasswd() {
-        return passwd;
-    }
+    public String getPasswd() {return passwd; }
 
     public void setPasswd(String passwd) {
         this.passwd = passwd;

@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class SellerController {
@@ -16,7 +15,7 @@ public class SellerController {
     @PostMapping("/addSeller")
     public String saveSeller(@RequestBody Seller seller) {
         repository.save(seller);
-        return "Added seller with id : " + seller.getId();
+        return "Added seller with id : " + seller.getUser();
     }
 
     @GetMapping("/findAllSeller")
@@ -24,14 +23,9 @@ public class SellerController {
         return repository.findAll();
     }
 
-    @GetMapping("/findAllSeller/{id}")
-    public Optional<Seller> getSeller(@PathVariable int id) {
-        return repository.findById(id);
+    @GetMapping("/findAllSeller/{user}")
+    public Seller getSeller(@PathVariable String user) {return repository.findByUser(user);
     }
 
-    @DeleteMapping("/delete/{id}")
-    public String deleteSeller(@PathVariable int id) {
-        repository.deleteById(id);
-        return "seller deleted with id : " + id;
-    }
+
 }
